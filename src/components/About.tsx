@@ -7,7 +7,7 @@ import { bgAbout } from '../assets';
 
 const About = () => {
   return (
-    <div className="relative h-[1000px]" id="about">
+    <div className="relative h-[100vh]" id="about">
       <Image
         src={bgAbout}
         alt="Background"

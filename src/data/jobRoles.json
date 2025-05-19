@@ -1,0 +1,19 @@
+{
+  "jobRoles": [
+    {
+      "id": 0,
+      "title": "Product Engineer",
+      "description": "Full time | California"
+    },
+    {
+      "id": 1,
+      "title": "Sales manager telecom",
+      "description": "Freelance"
+    },
+    {
+      "id": 2,
+      "title": "Field solution engineer",
+      "description": "Freelance"
+    }
+  ]
+}

@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { bgFeatureDetail, arrowIcon, closeIcon } from '../assets';
-import jobRolesData from '../data/jobRoles.json';
+import { bgFeatureDetail, backIcon } from '../assets';
+import careerDetailsData from '../data/careerDetails.json';
 
 // Simple layout without header
 const NoHeaderLayout: React.FC<{ children: React.ReactNode }> = ({
@@ -21,37 +21,18 @@ type PageWithCustomLayout = NextPage & {
   getLayout?: (page: ReactElement) => React.ReactNode;
 };
 
-// Job role component to avoid repetition
-interface JobRoleProps {
-  id: number;
-  title: string;
-  description: string;
-}
-
-const JobRole: React.FC<JobRoleProps> = ({ id, title, description }) => {
+const Careerdetail: PageWithCustomLayout = () => {
   const router = useRouter();
+  const { id } = router.query;
 
-  const handleClick = () => {
-    router.push(`/careerdetail?id=${id}`);
-  };
-
-  return (
-    <div
-      className="flex flex-col md:flex-row justify-between items-center bg-white/10 rounded-[45px] py-4 px-6 md:py-7 md:px-10 md:gap-4 cursor-pointer min-w-max w-full"
-      onClick={handleClick}
-    >
-      <p className="text-white text-[18px] md:text-2xl font-medium">{title}</p>
-      <div className="flex items-center gap-4">
-        <p className="text-white opacity-50 text-base md:text-[21px]">
-          {description}
-        </p>
-        <Image src={arrowIcon} alt="Arrow" width={24} height={24} />
-      </div>
-    </div>
+  const careerDetail = careerDetailsData.careerDetails.find(
+    (detail) => detail.id === Number(id)
   );
-};
 
-const Featuredetail: PageWithCustomLayout = () => {
+  if (!careerDetail) {
+    return <div>Career not found</div>;
+  }
+
   return (
     <div className="relative min-h-[100vh] py-32">
       <Image
@@ -70,15 +51,15 @@ const Featuredetail: PageWithCustomLayout = () => {
 
           {/* Close button */}
           <div className="flex justify-center items-center xl:items-start">
-            <Link href="/" passHref>
+            <Link href="/featuredetail" passHref>
               <div className="flex items-start mt-5 sm:mt-8 justify-center xl:justify-start min-w-[250px] w-max">
                 <div className="flex items-center">
                   <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
                   <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
                   <div className="bg-white/10 rounded-[45px] py-4 px-5 flex items-center gap-4 cursor-pointer">
-                    <Image src={closeIcon} alt="Close" width={24} height={24} />
+                    <Image src={backIcon} alt="Close" width={24} height={24} />
                     <span className="text-base text-white font-medium">
-                      Close
+                      Back
                     </span>
                   </div>
                   <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
@@ -88,19 +69,42 @@ const Featuredetail: PageWithCustomLayout = () => {
             </Link>
           </div>
 
-          {/* Job listings */}
-          <div className="flex flex-col gap-5 md:min-w-[650px]">
+          {/* Job details */}
+          <div className="flex flex-col gap-8 md:min-w-[650px]">
             <p className="text-white opacity-50 text-base md:text-[21px]">
-              Open roles
+              {`${careerDetail.type} | ${careerDetail.location}`}
             </p>
-
-            {jobRolesData.jobRoles.map((job) => (
-              <JobRole
-                key={job.id}
-                id={job.id}
-                title={job.title}
-                description={job.description}
-              />
+            <p className="text-white font-semibold text-[28px] lg:text-[36px] xl:text-[44px] leading-none">
+              {careerDetail.title}
+            </p>
+            <p className="text-white opacity-50 text-base md:text-[18px]">
+              {careerDetail.description}
+            </p>
+            <a
+              href={careerDetail.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-2xl text-center text-white bg-white/10 rounded-[45px] py-4 px-6 md:px-10 md:gap-4 cursor-pointer min-w-max w-full hover:border-none"
+            >
+              Send my CV
+            </a>
+            {/* Dynamic Sections */}
+            {careerDetail.sections.map((section, index) => (
+              <div
+                key={index}
+                className="flex flex-col md:flex-row gap-4 md:gap-11 items-start"
+              >
+                <div className="w-44 flex-shrink-0">
+                  <h2 className="text-white text-xl font-semibold text-left">
+                    {section.title}
+                  </h2>
+                </div>
+                <ul className="list-disc list-inside text-white/70 space-y-2 flex-1">
+                  {section.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
@@ -110,8 +114,8 @@ const Featuredetail: PageWithCustomLayout = () => {
 };
 
 // Use custom layout without header
-Featuredetail.getLayout = (page: ReactElement) => (
+Careerdetail.getLayout = (page: ReactElement) => (
   <NoHeaderLayout>{page}</NoHeaderLayout>
 );
 
-export default Featuredetail;
+export default Careerdetail;

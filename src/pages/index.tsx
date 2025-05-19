@@ -12,7 +12,7 @@ import Mint from '../components/Mint';
 const App = () => {
   return (
     <div className={`grid overflow-hidden`}>
-      <div className="relative h-[1000px]">
+      <div className="relative h-[100vh]">
         <Image
           src={bgAbout}
           alt="Background"

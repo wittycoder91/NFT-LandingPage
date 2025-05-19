@@ -1,4 +1,5 @@
 import arrowIcon from './images/arrowicon.png';
+import backIcon from './images/backicon.png';
 import bgAboutDetail from './images/bg-about-detail.png';
 import bgAbout from './images/bg-about.png';
 import bgFeatureDetail from './images/bg-feature-detail.png';
@@ -18,4 +19,5 @@ export {
   searchIcon,
   closeIcon,
   arrowIcon,
+  backIcon,
 };

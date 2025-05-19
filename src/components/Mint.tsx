@@ -7,7 +7,7 @@ import { bgMint } from '../assets';
 
 const Mint = () => {
   return (
-    <div className="relative h-[1000px]" id="mint">
+    <div className="relative h-[100vh]" id="mint">
       <Image
         src={bgMint}
         alt="Background"

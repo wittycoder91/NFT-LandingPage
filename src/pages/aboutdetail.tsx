@@ -21,7 +21,7 @@ type PageWithCustomLayout = NextPage & {
 
 const AboutDetailPage: PageWithCustomLayout = () => {
   return (
-    <div className="relative h-[1000px] min-h-[100vh]">
+    <div className="relative h-[100vh] min-h-[100vh]">
       <Image
         src={bgAboutDetail}
         alt="Background"

@@ -7,7 +7,7 @@ import { bgFeature } from '../assets';
 
 const Feature = () => {
   return (
-    <div className="relative h-[1000px]" id="features">
+    <div className="relative h-[100vh]" id="features">
       <Image
         src={bgFeature}
         alt="Background"

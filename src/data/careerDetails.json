@@ -1,0 +1,82 @@
+{
+  "careerDetails": [
+    {
+      "id": 0,
+      "title": "Product Engineer",
+      "location": "California",
+      "type": "Full time",
+      "url": "https://w3school.com/",
+      "description": "We are looking for a Product Engineer to join our team...",
+      "sections": [
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Design and implement new features",
+            "Collaborate with cross-functional teams",
+            "Write clean, maintainable code"
+          ]
+        },
+        {
+          "title": "Requirements",
+          "items": [
+            "5+ years of experience in product development",
+            "Strong knowledge of React and TypeScript",
+            "Experience with agile methodologies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Sales Representative",
+      "type": "Full-time",
+      "location": "Remote",
+      "description": "We are looking for a Sales Representative to join our team.",
+      "url": "https://example.com/apply",
+      "sections": [
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Develop and maintain client relationships",
+            "Meet sales targets",
+            "Create sales strategies"
+          ]
+        },
+        {
+          "title": "Requirements",
+          "items": [
+            "3+ years of telecom sales experience",
+            "Strong communication skills",
+            "Proven track record of meeting sales targets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Field Service Engineer",
+      "type": "Full-time",
+      "location": "On-site",
+      "description": "Join our team as a Field Service Engineer.",
+      "url": "https://example.com/apply",
+      "sections": [
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Provide on-site technical support",
+            "Implement solutions",
+            "Document technical procedures"
+          ]
+        },
+        {
+          "title": "Requirements",
+          "items": [
+            "Bachelor's degree in Engineering",
+            "Experience in field service",
+            "Strong problem-solving skills"
+          ]
+        }
+      ]
+    }
+  ]
+}
