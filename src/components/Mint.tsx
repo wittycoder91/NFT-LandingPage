@@ -27,7 +27,7 @@ const Mint = () => {
               </p>
               <div className="flex flex-col items-center mt-5 sm:mt-8 sm:flex-row sm:justify-center lg:justify-start gap-6 sm:gap-[10px]">
                 <div className="rounded-md shadow">
-                  <Link href="/aboutdetail" passHref>
+                  <Link href="/mintdetail" passHref>
                     <div className="cursor-pointer">
                       <button
                         className={`w-max flex items-center justify-center px-8 py-3 text-base font-medium rounded-[32px] text-black bg-white md:py-4 md:text-lg md:px-10 hover:border-none`}
