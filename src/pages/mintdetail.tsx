@@ -46,22 +46,22 @@ const MintDetailPage: PageWithCustomLayout = () => {
           <h1 className="text-4xl tracking-tight font-bold sm:text-5xl md:text-6xl leading-none text-center lg:text-left">
             About GenAuxi
           </h1>
-          <Link href="/" passHref>
-            <div className="flex items-center lg:items-start mt-5 sm:mt-8 justify-center lg:justify-start w-full">
-              <div className="flex items-center justify-center w-[250px]">
-                <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
-                <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
+          <div className="flex items-center lg:items-start mt-5 sm:mt-8 justify-center lg:justify-start w-full">
+            <div className="flex items-center justify-center w-[250px]">
+              <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
+              <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
+              <Link href="/" passHref>
                 <div className="bg-white/10 rounded-[45px] py-4 px-5 flex items-center gap-4 cursor-pointer">
                   <Image src={closeIcon} alt="Close" width={24} height={24} />
                   <span className="text-base text-white font-medium">
                     Close
                   </span>
                 </div>
-                <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
-                <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
-              </div>
+              </Link>
+              <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
+              <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
             </div>
-          </Link>
+          </div>
 
           {/* Right: Timer, Description, Wallet, Info */}
           <div className="flex flex-col items-center w-full max-w-2xl gap-8">

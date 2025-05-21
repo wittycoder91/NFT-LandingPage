@@ -38,24 +38,24 @@ const AboutDetailPage: PageWithCustomLayout = () => {
           </h1>
 
           {/* Close button */}
-          <Link href="/" passHref>
-            <div className="flex items-start mt-5 sm:mt-8 justify-center lg:justify-start w-full min-w-[250px]">
-              <div className="flex items-center justify-center">
-                <div className="flex items-center">
-                  <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
-                  <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
+          <div className="flex items-start mt-5 sm:mt-8 justify-center lg:justify-start w-full min-w-[250px]">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center">
+                <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
+                <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
+                <Link href="/" passHref>
                   <div className="bg-white/10 rounded-[45px] py-4 px-5 flex items-center gap-4 cursor-pointer">
                     <Image src={closeIcon} alt="Close" width={24} height={24} />
                     <span className="text-base text-white font-medium">
                       Close
                     </span>
                   </div>
-                  <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
-                  <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
-                </div>
+                </Link>
+                <div className="border-b border-[#D9D9D9] rounded-full w-[53px] opacity-20" />
+                <div className="bg-[#D9D9D9] rounded-full w-2 h-2 opacity-20" />
               </div>
             </div>
-          </Link>
+          </div>
 
           {/* Description */}
           <p className="mt-3 text-xl sm:mt-5 sm:text-2xl sm:max-w-xl sm:mx-auto md:mt-5 lg:text-3xl xl:text-[44px] lg:mx-0 text-center lg:text-left">
